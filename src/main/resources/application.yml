@@ -1,0 +1,14 @@
+server:
+  servlet:
+    context-path: /api/v1
+  port: 9080
+spring:
+  data:
+    jpa.repositories.enabled: true
+  datasource:
+    initialization-mode: always
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ms-user-db
+    username: localuser
+    password: 8nqQ01@JH7Fy
+    continueOnError: true
