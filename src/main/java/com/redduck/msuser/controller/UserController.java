@@ -35,8 +35,13 @@ public class UserController {
     // http://localhost:8080/api/users
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(){
-        List<User> users = userService.getAllUsers();
-        return new ResponseEntity<>(users, HttpStatus.OK);
+        try {
+            List<User> users = userService.getAllUsers();
+            return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+        }catch (Exception e){
+            return new ResponseEntity<>(null, HttpStatus.SERVICE_UNAVAILABLE);
+        }
+
     }
 
     // Build Update User REST API

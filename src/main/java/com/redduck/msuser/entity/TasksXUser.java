@@ -17,14 +17,15 @@ public class TasksXUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("user_id")
     User user;
 
-    @ManyToOne
-    @JoinColumn(name = "task_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @MapsId("task_id")
     Task task;
 
     int time;
+
 
 }
